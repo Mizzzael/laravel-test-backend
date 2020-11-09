@@ -1,0 +1,56 @@
+@import "./vars.scss";
+
+select.input {
+  cursor: pointer;
+}
+
+.input,
+.input\:checkbox\.label {
+  border: solid 1px $color-gray;
+  transition: 220ms all linear;
+  appearance: initial;
+}
+
+.input\:checkbox\.canvas {
+  border: solid 1px $color-gray;
+  width: 68px;
+  padding: 2px;
+}
+
+.input\:checkbox\.title,
+.input\:checkbox\.canvas {
+  cursor: pointer;
+}
+
+.input\:checkbox\.icons {
+  width: 16px;
+  height: 16px;
+  left: 2px;
+  background-color: $color-gray;
+}
+
+.input\:checkbox\.title,
+.input\:checkbox\.icons,
+.input\:checkbox\.label {
+  transition: ease 220ms all;
+}
+
+.input\:checkbox:checked ~ .input\:checkbox\.label,
+.input\:checkbox:checked ~ .input\:checkbox\.label .input\:checkbox\.canvas {
+  border-color: $color-green;
+}
+
+.input\:checkbox:checked ~ .input\:checkbox\.label .input\:checkbox\.title {
+  font-weight: bold;
+  color: $color-green;
+}
+
+.input\:checkbox:checked ~ .input\:checkbox\.label .input\:checkbox\.icons {
+  left: 48px;
+  background-color: $color-green;
+}
+
+.input:focus {
+  outline: none;
+  border-color: $color-green;
+}

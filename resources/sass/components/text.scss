@@ -1,0 +1,49 @@
+@import "./vars.scss";
+
+.text\.title\:h1 {
+  font-size: 32px;
+}
+
+.text\.title\:h2 {
+  font-size: 28px;
+}
+
+.text\.title\:h3 {
+  font-size: 24px;
+}
+
+.text\.title\:h4 {
+  font-size: 22px;
+}
+
+.text\.title\:h5 {
+  font-size: 18px;
+}
+
+.text\:p {
+  font-size: 16px;
+}
+
+.color\:gray {
+  color: $color-gray;
+}
+
+.color\:lead {
+  color: $color-lead;
+}
+
+.color\:green {
+  color: $color-green;
+}
+
+.color\:blue {
+  color: $color-blue;
+}
+
+.color\:purple {
+  color: $color-purple;
+}
+
+.color\:red {
+  color: $color-red;
+}

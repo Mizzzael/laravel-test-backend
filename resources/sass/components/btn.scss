@@ -1,0 +1,18 @@
+@import "./vars.scss";
+
+[class *= 'btn'] {
+  transition: 220ms all linear;
+}
+
+[class *= 'btn']:disabled {
+  opacity: 0.5;
+}
+
+.btn\.success {
+  border: solid 1px $color-green;
+}
+
+.btn\.success:hover {
+  border-color: rgba(113, 59, 219, 0.05);
+  color: rgba(113, 59, 219, 0.05);
+}

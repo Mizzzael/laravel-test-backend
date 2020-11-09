@@ -1,0 +1,34 @@
+@import "../css/tailwindcss.bundle.css";
+@import "../css/Gilroy/font.css";
+@import "components/bg.scss";
+@import "components/input.scss";
+@import "components/text.scss";
+@import "components/btn.scss";
+
+#root {
+  font-family: 'Gilroy', Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-gray); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-lead);
+  transition: 200ms all linear; 
+  cursor: pointer;
+  border-radius: 4px;
+  width: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-blue); 
+}
