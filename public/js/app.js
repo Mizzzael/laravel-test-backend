@@ -1930,6 +1930,93 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/src/components/aside.component.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/src/components/aside.component.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "Menu",
+  data: function data() {
+    return {
+      active: false
+    };
+  },
+  methods: {
+    toggle: function toggle() {
+      this.active = !this.active;
+    },
+    closeAside: function closeAside() {
+      if (this.active) this.active = false;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/src/components/loading.component.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/src/components/loading.component.vue?vue&type=script&lang=js& ***!
@@ -1991,6 +2078,9 @@ var _js_animations_6528_loading_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
 //
 //
 //
@@ -2862,8 +2952,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -2882,7 +2970,7 @@ __webpack_require__.r(__webpack_exports__);
       },
       errors: [],
       contract: {
-        idImmobile: "",
+        immobile_id: "",
         city: "",
         neighborhood: "",
         address: "",
@@ -2905,7 +2993,7 @@ __webpack_require__.r(__webpack_exports__);
           address = _this$immobile.address,
           complement = _this$immobile.complement,
           number = _this$immobile.number;
-      this.contract.idImmobile = id;
+      this.contract.immobile_id = id;
       this.contract.city = city;
       this.contract.neighborhood = neighborhood;
       this.contract.address = address;
@@ -2999,7 +3087,7 @@ __webpack_require__.r(__webpack_exports__);
       Form.append("name", this.contract.name);
       Form.append("email", this.contract.email);
       Form.append("personType", parseInt(this.contract.personType));
-      Form.append("idImmobile", parseInt(this.contract.idImmobile));
+      Form.append("immobile_id", parseInt(this.contract.immobile_id));
       Form.append("document", this.contract.document);
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/api/contract", Form).then(function (_ref2) {
         var data = _ref2.data;
@@ -3243,7 +3331,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "\n.App {\n    min-height: 100vh;\n}\n", ""]);
+exports.push([module.i, "\n.App {\n    min-height: 100vh;\n    overflow: auto;\n}\n", ""]);
 
 // exports
 
@@ -3262,7 +3350,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.Menu\\.aside {\n    width: 100px;\n    min-height: 100vh;\n}\n", ""]);
+exports.push([module.i, "\n.Menu\\.aside {\n    width: 100px;\n    min-height: 100vh;\n}\n@media only screen and (max-width: 768px) {\n.Menu\\.aside {\n        z-index: 99999;\n        transition: ease 220ms all;\n        left: -100px;\n}\n.Menu\\.aside.active {\n        left: 0;\n}\n}\n", ""]);
 
 // exports
 
@@ -37124,56 +37212,104 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "aside",
-    { staticClass: "Menu.aside fixed left-0 top-0 px-2 bg-lead" },
-    [
-      _c("nav", { staticClass: "w-full" }, [
-        _c("ul", { staticClass: "w-full text-center pt-10" }, [
-          _c(
-            "li",
-            { staticClass: "Menu.link py-2" },
-            [
-              _c("router-link", { attrs: { to: "/" } }, [
-                _c("span", { staticClass: "text-white text.title:h3" }, [
-                  _c("i", { staticClass: "fa fa-plus-square" })
+  return _c("div", [
+    _c(
+      "button",
+      {
+        staticClass: "aside.close text.title:h4 mx-1 my-1 px-2 py-2",
+        on: { click: _vm.toggle }
+      },
+      [_c("i", { staticClass: "fa fa-bars" })]
+    ),
+    _vm._v(" "),
+    _c(
+      "aside",
+      {
+        class:
+          "Menu.aside fixed left-0 top-0 px-2 bg-lead" +
+          (_vm.active ? " active" : "")
+      },
+      [
+        _c("nav", { staticClass: "w-full" }, [
+          _c("ul", { staticClass: "w-full text-center pt-10" }, [
+            _c(
+              "li",
+              {
+                staticClass: "Menu.link py-2 lg:hidden block",
+                on: { click: _vm.toggle }
+              },
+              [_vm._m(0)]
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "Menu.link py-2" },
+              [
+                _c("router-link", { attrs: { to: "/" } }, [
+                  _c(
+                    "span",
+                    {
+                      staticClass: "text-white text.title:h3",
+                      on: { click: _vm.closeAside }
+                    },
+                    [_c("i", { staticClass: "fa fa-plus-square" })]
+                  )
                 ])
-              ])
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "li",
-            { staticClass: "Menu.link py-2" },
-            [
-              _c("router-link", { attrs: { to: "/imoveis" } }, [
-                _c("span", { staticClass: "text-white text.title:h3" }, [
-                  _c("i", { staticClass: "fa fa-list" })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "Menu.link py-2" },
+              [
+                _c("router-link", { attrs: { to: "/imoveis" } }, [
+                  _c(
+                    "span",
+                    {
+                      staticClass: "text-white text.title:h3",
+                      on: { click: _vm.closeAside }
+                    },
+                    [_c("i", { staticClass: "fa fa-list" })]
+                  )
                 ])
-              ])
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "li",
-            { staticClass: "Menu.link py-2" },
-            [
-              _c("router-link", { attrs: { to: "/contrato" } }, [
-                _c("span", { staticClass: "text-white text.title:h3" }, [
-                  _c("i", { staticClass: "fa fa-file" })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "Menu.link py-2" },
+              [
+                _c("router-link", { attrs: { to: "/contrato" } }, [
+                  _c(
+                    "span",
+                    {
+                      staticClass: "text-white text.title:h3",
+                      on: { click: _vm.closeAside }
+                    },
+                    [_c("i", { staticClass: "fa fa-file" })]
+                  )
                 ])
-              ])
-            ],
-            1
-          )
+              ],
+              1
+            )
+          ])
         ])
-      ])
-    ]
-  )
+      ]
+    )
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "text-white text.title:h3" }, [
+      _c("i", { staticClass: "fa fa-times" })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -37229,7 +37365,7 @@ var render = function() {
       _vm._m(0),
       _vm._v(" "),
       _c("section", { staticClass: "w-full flex flex-wrap" }, [
-        _c("div", { staticClass: "w-3/12 px-1" }, [
+        _c("div", { staticClass: "lg:w-3/12 w-full px-1 lg:py-0 py-2" }, [
           _c(
             "select",
             {
@@ -37293,7 +37429,7 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "w-3/12 px-1" }, [
+        _c("div", { staticClass: "lg:w-3/12 w-full px-1 lg:py-0 py-2" }, [
           _c(
             "select",
             {
@@ -37354,7 +37490,7 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "w-3/12 px-1" }, [
+        _c("div", { staticClass: "lg:w-3/12 w-full px-1 lg:py-0 py-2" }, [
           _c(
             "select",
             {
@@ -37413,7 +37549,7 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "w-3/12 px-1" }, [
+        _c("div", { staticClass: "lg:w-3/12 w-full px-1 lg:py-0 py-2" }, [
           _c(
             "button",
             {
@@ -37446,7 +37582,7 @@ var render = function() {
                   staticClass: "w-full flex flex-wrap px-1 py-4 items-center"
                 },
                 [
-                  _c("div", { staticClass: "w-8/12" }, [
+                  _c("div", { staticClass: "lg:w-8/12 w-full" }, [
                     _c("p", { staticClass: "text:p color:lead" }, [
                       _vm._v(
                         "\n                    " +
@@ -37467,7 +37603,7 @@ var render = function() {
                   !immobile.solded
                     ? _c(
                         "div",
-                        { staticClass: "w-4/12 text-right" },
+                        { staticClass: "lg:w-4/12 w-full lg:text-right" },
                         [
                           _c(
                             "router-link",
@@ -37500,7 +37636,7 @@ var render = function() {
                           "span",
                           {
                             staticClass:
-                              "text:p color:red px-6 py-2 rounded-lg font-bold inline-block"
+                              "text:p color:red lg:px-6 py-2 rounded-lg font-bold inline-block"
                           },
                           [
                             _vm._v(
@@ -37570,7 +37706,7 @@ var render = function() {
           staticClass: "table.tr items-center w-full flex flex-wrap py-2 px-4"
         },
         [
-          _c("div", { staticClass: "w-3/12" }, [
+          _c("div", { staticClass: "lg:w-3/12 w-6/12" }, [
             !_vm.sortEmailActive
               ? _c(
                   "p",
@@ -37604,7 +37740,7 @@ var render = function() {
               : _vm._e()
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "w-4/12" }, [
+          _c("div", { staticClass: "lg:w-4/12 w-6/12" }, [
             !_vm.sortAddressActive
               ? _c(
                   "p",
@@ -37654,7 +37790,7 @@ var render = function() {
             staticClass: "table.tr items-center w-full flex flex-wrap py-4 px-4"
           },
           [
-            _c("div", { staticClass: "w-3/12" }, [
+            _c("div", { staticClass: "lg:w-3/12 w-full" }, [
               _c("p", { staticClass: "text:p color:blue font-bold" }, [
                 _vm._v(
                   "\n                    " +
@@ -37664,7 +37800,7 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "w-4/12" }, [
+            _c("div", { staticClass: "lg:w-4/12 w-full" }, [
               _c("p", { staticClass: "text:p" }, [
                 _vm._v(
                   "\n                    " +
@@ -37682,7 +37818,7 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "w-3/12" }, [
+            _c("div", { staticClass: "lg:w-3/12 w-full" }, [
               !product.solded
                 ? _c("p", { staticClass: "text:p color:purple" }, [
                     _vm._v(
@@ -37709,7 +37845,7 @@ var render = function() {
                 : _vm._e()
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "w-2/12 px-1 text-center" }, [
+            _c("div", { staticClass: "lg:w-2/12 w-full px-1 lg:text-center" }, [
               _c(
                 "button",
                 {
@@ -37735,7 +37871,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-3/12" }, [
+    return _c("div", { staticClass: "w-3/12 lg:block hidden" }, [
       _c("p", { staticClass: "text:p color:lead font-bold" }, [
         _vm._v("\n                    Status\n                ")
       ])
@@ -38249,139 +38385,131 @@ var render = function() {
             _vm._m(0),
             _vm._v(" "),
             _c("section", { staticClass: "w-full" }, [
-              _c(
-                "section",
-                { staticClass: "w-full mx-auto flex flex-wrap my-2" },
-                [
-                  _c("div", { staticClass: "w-6/12 pr-1" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.contract.city,
-                          expression: "contract.city"
-                        }
-                      ],
-                      staticClass:
-                        "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
-                      attrs: {
-                        placeholder: "Cidade",
-                        type: "text",
-                        disabled: ""
-                      },
-                      domProps: { value: _vm.contract.city },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.contract, "city", $event.target.value)
-                        }
+              _c("section", { staticClass: "w-full mx-auto flex flex-wrap" }, [
+                _c("div", { staticClass: "lg:w-6/12 w-full my-1 lg:pr-1" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.contract.city,
+                        expression: "contract.city"
                       }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "w-6/12 pl-1" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.contract.neighborhood,
-                          expression: "contract.neighborhood"
+                    ],
+                    staticClass:
+                      "input w-full mx-auto px-4 py-2 text:p rounded-lg",
+                    attrs: {
+                      placeholder: "Cidade",
+                      type: "text",
+                      disabled: ""
+                    },
+                    domProps: { value: _vm.contract.city },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
                         }
-                      ],
-                      staticClass:
-                        "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
-                      attrs: {
-                        placeholder: "Bairro",
-                        type: "text",
-                        disabled: "",
-                        value: "JD. Vermelhão"
-                      },
-                      domProps: { value: _vm.contract.neighborhood },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.contract,
-                            "neighborhood",
-                            $event.target.value
-                          )
-                        }
+                        _vm.$set(_vm.contract, "city", $event.target.value)
                       }
-                    })
-                  ])
-                ]
-              ),
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "lg:w-6/12 w-full my-1 lg:pl-1" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.contract.neighborhood,
+                        expression: "contract.neighborhood"
+                      }
+                    ],
+                    staticClass:
+                      "input w-full mx-auto px-4 py-2 text:p rounded-lg",
+                    attrs: {
+                      placeholder: "Bairro",
+                      type: "text",
+                      disabled: "",
+                      value: "JD. Vermelhão"
+                    },
+                    domProps: { value: _vm.contract.neighborhood },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.contract,
+                          "neighborhood",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
               _vm._v(" "),
-              _c(
-                "section",
-                { staticClass: "w-full mx-auto flex flex-wrap my-2" },
-                [
-                  _c("div", { staticClass: "w-8/12 pr-1" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.contract.address,
-                          expression: "contract.address"
-                        }
-                      ],
-                      staticClass:
-                        "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
-                      attrs: {
-                        placeholder: "Endereço",
-                        type: "text",
-                        disabled: "",
-                        value: "R. Pernambuco"
-                      },
-                      domProps: { value: _vm.contract.address },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.contract, "address", $event.target.value)
-                        }
+              _c("section", { staticClass: "w-full mx-auto flex flex-wrap" }, [
+                _c("div", { staticClass: "lg:w-8/12 w-full lg:pr-1 my-1" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.contract.address,
+                        expression: "contract.address"
                       }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "w-4/12 pl-1" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.contract.number,
-                          expression: "contract.number"
+                    ],
+                    staticClass:
+                      "input w-full mx-auto px-4 py-2 text:p rounded-lg",
+                    attrs: {
+                      placeholder: "Endereço",
+                      type: "text",
+                      disabled: "",
+                      value: "R. Pernambuco"
+                    },
+                    domProps: { value: _vm.contract.address },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
                         }
-                      ],
-                      staticClass:
-                        "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
-                      attrs: {
-                        placeholder: "Número",
-                        type: "text",
-                        disabled: ""
-                      },
-                      domProps: { value: _vm.contract.number },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.contract, "number", $event.target.value)
-                        }
+                        _vm.$set(_vm.contract, "address", $event.target.value)
                       }
-                    })
-                  ])
-                ]
-              ),
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "lg:w-4/12 w-full lg:pl-1 my-1" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.contract.number,
+                        expression: "contract.number"
+                      }
+                    ],
+                    staticClass:
+                      "input w-full mx-auto px-4 py-2 text:p rounded-lg",
+                    attrs: {
+                      placeholder: "Número",
+                      type: "text",
+                      disabled: ""
+                    },
+                    domProps: { value: _vm.contract.number },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.contract, "number", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -38393,7 +38521,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
+                  "input w-full mx-auto px-4 py-2 my-1 text:p rounded-lg",
                 attrs: {
                   placeholder: "Complemento",
                   type: "text",
@@ -38412,11 +38540,9 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "section",
-                {
-                  staticClass: "w-full mx-auto flex flex-wrap my-2 items-center"
-                },
+                { staticClass: "w-full mx-auto flex flex-wrap items-center" },
                 [
-                  _c("div", { staticClass: "w-6/12 pr-1" }, [
+                  _c("div", { staticClass: "lg:w-6/12 w-full lg:pr-1 my-1" }, [
                     _c("input", {
                       directives: [
                         {
@@ -38469,7 +38595,7 @@ var render = function() {
                     _vm._m(1)
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "w-6/12 pl-1" }, [
+                  _c("div", { staticClass: "lg:w-6/12 w-full lg:pl-1 my-1" }, [
                     _c("input", {
                       directives: [
                         {
@@ -38480,7 +38606,7 @@ var render = function() {
                         }
                       ],
                       staticClass:
-                        "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
+                        "input w-full mx-auto px-4 py-2 text:p rounded-lg",
                       attrs: {
                         placeholder: _vm.uiConfig.legalPerson ? "CNPJ" : "CPF",
                         type: "text",
@@ -38516,7 +38642,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "input w-full mx-auto my-2 px-4 py-2 text:p block rounded-lg",
+                  "input w-full mx-auto my-1 px-4 py-2 text:p  rounded-lg",
                 attrs: { placeholder: "E-mail", required: "", type: "text" },
                 domProps: { value: _vm.contract.email },
                 on: {
@@ -38539,7 +38665,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "input w-full mx-auto my-2 px-4 py-2 text:p block rounded-lg",
+                  "input w-full mx-auto my-1 px-4 py-2 text:p rounded-lg",
                 attrs: {
                   placeholder: "Nome Completo",
                   type: "text",
@@ -54114,17 +54240,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _aside_component_vue_vue_type_template_id_4a911711___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./aside.component.vue?vue&type=template&id=4a911711& */ "./resources/src/components/aside.component.vue?vue&type=template&id=4a911711&");
-/* harmony import */ var _aside_component_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./aside.component.vue?vue&type=style&index=0&lang=css& */ "./resources/src/components/aside.component.vue?vue&type=style&index=0&lang=css&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _aside_component_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./aside.component.vue?vue&type=script&lang=js& */ "./resources/src/components/aside.component.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _aside_component_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./aside.component.vue?vue&type=style&index=0&lang=css& */ "./resources/src/components/aside.component.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _aside_component_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _aside_component_vue_vue_type_template_id_4a911711___WEBPACK_IMPORTED_MODULE_0__["render"],
   _aside_component_vue_vue_type_template_id_4a911711___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -54138,6 +54266,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/src/components/aside.component.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/src/components/aside.component.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/src/components/aside.component.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_aside_component_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./aside.component.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/src/components/aside.component.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_aside_component_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 

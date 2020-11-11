@@ -26,8 +26,8 @@
     </header>
     <section class="w-full mx-auto">
       <h5 class="font-normal">
-      O contratante, {{trim($contract->name)}}, na condição de pessoa {{ ($contract->personType === 1) ? 'Juridíca': 'Civíl' }}, registrado(a) no {{ ($contract->personType === 1) ? 'CNPJ': 'CPF' }}: {{ $contract->document }}, está exercendo a alocação do imóvel, cod. {{ $contract->idImmobile }},
-      situado na localidade da {{ $contract->immobile->address }} - n° {{ $contract->immobile->number }}, {{ $contract->immobile->neighborhood }}, {{ $contract->immobile->city }}, {{ $contract->immobile->state }}{{ ($contract->immobile->complement) ? ' , '.$contract->immobile->complement:'' }}, tendo efetuado a solicitação por meio da locataria WWF.
+      O contratante, {{trim($contract->name)}}, na condição de pessoa {{ ($contract->personType === 1) ? 'Juridíca': 'Civíl' }}, registrado(a) no {{ ($contract->personType === 1) ? 'CNPJ': 'CPF' }}: {{ $contract->document }}, está exercendo a alocação do imóvel, cod. {{ $contract->immobile_id }},
+      situado na localidade da {{ $contract->immobile->address }} - n° {{ $contract->immobile->number }}, {{ $contract->immobile->neighborhood }}, {{ $contract->immobile->city }}, {{ $contract->immobile->state }}{{ ($contract->immobile->complement) ? ' , '.$contract->immobile->complement:'' }}, tendo efetuado a solicitação por meio da locadora WWF.
       </h5>
       <hr class="w-6/12 mx-auto my-8" />
       <div class="w-8/12 mx-auto">

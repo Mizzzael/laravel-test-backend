@@ -10,7 +10,7 @@ class Contract extends Model
     protected function immobile() 
     {
 
-        return $this->belongsTo('App\Immobile', 'idImmobile');
+        return $this->belongsTo('App\Immobile');
 
     }
 

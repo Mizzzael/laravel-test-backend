@@ -26,19 +26,19 @@
                 </h4>
             </header>
             <section class="w-full">
-                <section class="w-full mx-auto flex flex-wrap my-2">
-                    <div class="w-6/12 pr-1">
+                <section class="w-full mx-auto flex flex-wrap">
+                    <div class="lg:w-6/12 w-full my-1 lg:pr-1">
                         <input
-                            class="input w-full mx-auto px-4 py-2 text:p block rounded-lg"
+                            class="input w-full mx-auto px-4 py-2 text:p rounded-lg"
                             placeholder="Cidade"
                             type="text"
                             disabled
                             v-model="contract.city"
                         />
                     </div>
-                    <div class="w-6/12 pl-1">
+                    <div class="lg:w-6/12 w-full my-1 lg:pl-1">
                         <input
-                            class="input w-full mx-auto px-4 py-2 text:p block rounded-lg"
+                            class="input w-full mx-auto px-4 py-2 text:p rounded-lg"
                             placeholder="Bairro"
                             type="text"
                             disabled
@@ -47,10 +47,10 @@
                         />
                     </div>
                 </section>
-                <section class="w-full mx-auto flex flex-wrap my-2">
-                    <div class="w-8/12 pr-1">
+                <section class="w-full mx-auto flex flex-wrap">
+                    <div class="lg:w-8/12 w-full lg:pr-1 my-1">
                         <input
-                            class="input w-full mx-auto px-4 py-2 text:p block rounded-lg"
+                            class="input w-full mx-auto px-4 py-2 text:p rounded-lg"
                             placeholder="Endereço"
                             type="text"
                             disabled
@@ -58,9 +58,9 @@
                             value="R. Pernambuco"
                         />
                     </div>
-                    <div class="w-4/12 pl-1">
+                    <div class="lg:w-4/12 w-full lg:pl-1 my-1">
                         <input
-                            class="input w-full mx-auto px-4 py-2 text:p block rounded-lg"
+                            class="input w-full mx-auto px-4 py-2 text:p rounded-lg"
                             placeholder="Número"
                             type="text"
                             disabled
@@ -69,16 +69,14 @@
                     </div>
                 </section>
                 <input
-                    class="input w-full mx-auto px-4 py-2 text:p block rounded-lg"
+                    class="input w-full mx-auto px-4 py-2 my-1 text:p rounded-lg"
                     placeholder="Complemento"
                     type="text"
                     disabled
                     v-model="contract.complement"
                 />
-                <section
-                    class="w-full mx-auto flex flex-wrap my-2 items-center"
-                >
-                    <div class="w-6/12 pr-1">
+                <section class="w-full mx-auto flex flex-wrap items-center">
+                    <div class="lg:w-6/12 w-full lg:pr-1 my-1">
                         <input
                             class="input:checkbox hidden"
                             id="persontype"
@@ -104,9 +102,9 @@
                             </span>
                         </label>
                     </div>
-                    <div class="w-6/12 pl-1">
+                    <div class="lg:w-6/12 w-full lg:pl-1 my-1">
                         <input
-                            class="input w-full mx-auto px-4 py-2 text:p block rounded-lg"
+                            class="input w-full mx-auto px-4 py-2 text:p rounded-lg"
                             :placeholder="uiConfig.legalPerson ? 'CNPJ' : 'CPF'"
                             type="text"
                             id="cpf"
@@ -117,14 +115,14 @@
                     </div>
                 </section>
                 <input
-                    class="input w-full mx-auto my-2 px-4 py-2 text:p block rounded-lg"
+                    class="input w-full mx-auto my-1 px-4 py-2 text:p  rounded-lg"
                     placeholder="E-mail"
                     v-model="contract.email"
                     required
                     type="text"
                 />
                 <input
-                    class="input w-full mx-auto my-2 px-4 py-2 text:p block rounded-lg"
+                    class="input w-full mx-auto my-1 px-4 py-2 text:p rounded-lg"
                     placeholder="Nome Completo"
                     type="text"
                     required
@@ -174,7 +172,7 @@ export default {
             },
             errors: [],
             contract: {
-                idImmobile: "",
+                immobile_id: "",
                 city: "",
                 neighborhood: "",
                 address: "",
@@ -199,7 +197,7 @@ export default {
                 number
             } = this.immobile;
 
-            this.contract.idImmobile = id;
+            this.contract.immobile_id = id;
             this.contract.city = city;
             this.contract.neighborhood = neighborhood;
             this.contract.address = address;
@@ -292,7 +290,7 @@ export default {
             Form.append("name", this.contract.name);
             Form.append("email", this.contract.email);
             Form.append("personType", parseInt(this.contract.personType));
-            Form.append("idImmobile", parseInt(this.contract.idImmobile));
+            Form.append("immobile_id", parseInt(this.contract.immobile_id));
             Form.append("document", this.contract.document);
             Axios.post("/api/contract", Form).then(
                 ({ data }) => {

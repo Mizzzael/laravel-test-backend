@@ -30,7 +30,7 @@ class ContractController extends Controller
         $validate = Validator::make($request->all(), [
             'email' => 'required|email:rfc,dns',
             'name' => 'required|string',
-            'idImmobile' => 'required|numeric',
+            'immobile_id' => 'required|numeric',
             'document' => 'required|cpf_cnpj',
             'personType' => 'required|min:1|max:2|numeric'
         ]);
@@ -39,17 +39,17 @@ class ContractController extends Controller
             return \App\Helpers\Responses::conflict($validate->errors());
         }
 
-        $checkImmobileHaveAContract = \App\Contract::where(['idImmobile' => $request->input('idImmobile')])->get();
+        $checkImmobileHaveAContract = \App\Contract::where(['immobile_id' => $request->input('immobile_id')])->get();
         if(sizeof($checkImmobileHaveAContract) > 0) {
             return \App\Helpers\Responses::conflict(['message' => 'This immobile have a contract!']);
         }
 
-        $immobile = \App\Immobile::find($request->input('idImmobile'));
+        $immobile = \App\Immobile::find($request->input('immobile_id'));
         $contract = new \App\Contract();
         $contract->email = $request->input('email');
         $contract->name = $request->input('name');
         $contract->city = $immobile->city;
-        $contract->idImmobile = $request->input('idImmobile');
+        $contract->immobile_id = $request->input('immobile_id');
         $contract->address = $immobile->address;
         $contract->neighborhood = $immobile->neighborhood;
         $contract->number = $immobile->number;

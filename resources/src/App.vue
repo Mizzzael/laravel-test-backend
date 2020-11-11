@@ -21,5 +21,6 @@ export default {
 <style>
 .App {
     min-height: 100vh;
+    overflow: auto;
 }
 </style>

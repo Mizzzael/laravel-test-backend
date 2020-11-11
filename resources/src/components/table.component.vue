@@ -4,7 +4,7 @@
             <section
                 class="table.tr items-center w-full flex flex-wrap py-2 px-4"
             >
-                <div class="w-3/12">
+                <div class="lg:w-3/12 w-6/12">
                     <p
                         v-if="!sortEmailActive"
                         v-on:click="sortByEmail"
@@ -22,7 +22,7 @@
                         <i class="fa fa-sort"></i>
                     </p>
                 </div>
-                <div class="w-4/12">
+                <div class="lg:w-4/12 w-6/12">
                     <p
                         v-if="!sortAddressActive"
                         v-on:click="sortByAddress"
@@ -40,7 +40,7 @@
                         <i class="fa fa-sort"></i>
                     </p>
                 </div>
-                <div class="w-3/12">
+                <div class="w-3/12 lg:block hidden">
                     <p class="text:p color:lead font-bold">
                         Status
                     </p>
@@ -53,19 +53,19 @@
                 :key="`imovel-${index}`"
                 class="table.tr items-center w-full flex flex-wrap py-4 px-4"
             >
-                <div class="w-3/12">
+                <div class="lg:w-3/12 w-full">
                     <p class="text:p color:blue font-bold">
                         {{ product.email }}
                     </p>
                 </div>
-                <div class="w-4/12">
+                <div class="lg:w-4/12 w-full">
                     <p class="text:p">
                         {{ product.address }}, {{ product.number }},
                         {{ product.neighborhood }}, {{ product.city }},
                         {{ product.state }}
                     </p>
                 </div>
-                <div class="w-3/12">
+                <div class="lg:w-3/12 w-full">
                     <p v-if="!product.solded" class="text:p color:purple">
                         Não contratado
                     </p>
@@ -78,7 +78,7 @@
                         Contratado <i class="fa fa-link"></i>
                     </a>
                 </div>
-                <div class="w-2/12 px-1 text-center">
+                <div class="lg:w-2/12 w-full px-1 lg:text-center">
                     <button
                         v-on:click="dropAProduct(product.id)"
                         class="text:p color:red"

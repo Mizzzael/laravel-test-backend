@@ -7,7 +7,7 @@
             <hr class="mt-4" />
         </header>
         <section class="w-full flex flex-wrap">
-            <div class="w-3/12 px-1">
+            <div class="lg:w-3/12 w-full px-1 lg:py-0 py-2">
                 <select
                     v-model="email"
                     v-on:change="loadStates()"
@@ -25,7 +25,7 @@
                     </option>
                 </select>
             </div>
-            <div class="w-3/12 px-1">
+            <div class="lg:w-3/12 w-full px-1 lg:py-0 py-2">
                 <select
                     :disabled="!statesList.length"
                     v-model="state"
@@ -44,7 +44,7 @@
                     </option>
                 </select>
             </div>
-            <div class="w-3/12 px-1">
+            <div class="lg:w-3/12 w-full px-1 lg:py-0 py-2">
                 <select
                     :disabled="!neighborhoodList.length"
                     v-model="neighborhood"
@@ -62,7 +62,7 @@
                     </option>
                 </select>
             </div>
-            <div class="w-3/12 px-1">
+            <div class="lg:w-3/12 w-full px-1 lg:py-0 py-2">
                 <button
                     v-on:click="loadImmobilesToSelectContract()"
                     :disabled="!(email && state && neighborhood)"
@@ -79,14 +79,17 @@
                 :key="`immobile-${key}`"
                 class="w-full flex flex-wrap px-1 py-4 items-center"
             >
-                <div class="w-8/12">
+                <div class="lg:w-8/12 w-full">
                     <p class="text:p color:lead">
                         {{ immobile.address }} - n° {{ immobile.number }},
                         {{ immobile.neighborhood }}, {{ immobile.city }} -
                         {{ immobile.state }}
                     </p>
                 </div>
-                <div v-if="!immobile.solded" class="w-4/12 text-right">
+                <div
+                    v-if="!immobile.solded"
+                    class="lg:w-4/12 w-full lg:text-right"
+                >
                     <router-link :to="'/contrato/registro/' + immobile.id">
                         <span
                             class="btn.success text:p color:green px-6 py-2 rounded-lg font-light inline-block"
@@ -97,7 +100,7 @@
                 </div>
                 <div v-if="immobile.solded" class="w-4/12 text-right">
                     <span
-                        class="text:p color:red px-6 py-2 rounded-lg font-bold inline-block"
+                        class="text:p color:red lg:px-6 py-2 rounded-lg font-bold inline-block"
                     >
                         CONTRATADO
                     </span>

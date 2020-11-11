@@ -10,6 +10,6 @@ class Immobile extends Model
 
     protected function contract() 
     {
-        return $this->hasOne('\App\Contract', 'idImmobile');
+        return $this->hasOne('\App\Contract');
     }
 }
