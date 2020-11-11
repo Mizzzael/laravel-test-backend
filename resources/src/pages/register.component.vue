@@ -31,6 +31,7 @@
                             <select
                                 class="input w-full mx-auto px-4 py-2 text:p block rounded-lg bg-white"
                                 v-model="immobile.state"
+                                :disabled="immobile.CEP != ''"
                             >
                                 <option disabled selected value="">
                                     Estado
@@ -51,6 +52,7 @@
                                 class="input w-full mx-auto px-4 py-2 text:p block rounded-lg"
                                 placeholder="Endereço"
                                 v-model="immobile.address"
+                                :disabled="immobile.CEP != ''"
                                 required
                                 type="text"
                             />
@@ -71,6 +73,7 @@
                                 class="input w-full mx-auto px-4 py-2 text:p block rounded-lg"
                                 placeholder="Cidade"
                                 v-model="immobile.city"
+                                :disabled="immobile.CEP != ''"
                                 required
                                 type="text"
                             />
@@ -80,6 +83,7 @@
                                 class="input w-full mx-auto px-4 py-2 text:p block rounded-lg"
                                 placeholder="Bairro"
                                 v-model="immobile.neighborhood"
+                                :disabled="immobile.CEP != ''"
                                 required
                                 type="text"
                             />
@@ -97,7 +101,11 @@
                         v-if="errors.length"
                         class="w-full my-2 bg-red py-2 px-4 rounded-lg"
                     >
-                        <p v-for="error in errors" class="text:p font-bold">
+                        <p
+                            v-for="(error, index) in errors"
+                            :key="'error-' + index"
+                            class="text:p font-bold"
+                        >
                             <i class="fa fa-warning"></i> - {{ error }}
                         </p>
                     </section>

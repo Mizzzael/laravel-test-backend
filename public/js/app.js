@@ -2289,6 +2289,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Table",
@@ -2385,107 +2390,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_products_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/products.component */ "./resources/src/components/products.component.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2704,6 +2608,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2777,6 +2689,525 @@ __webpack_require__.r(__webpack_exports__);
     vanilla_masker__WEBPACK_IMPORTED_MODULE_1___default()(document.getElementById("cep")).maskPattern("99999-999");
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/src/pages/register_contract.component.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/src/pages/register_contract.component.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_loading_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/loading.component */ "./resources/src/components/loading.component.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vanilla_masker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vanilla-masker */ "./node_modules/vanilla-masker/lib/vanilla-masker.js");
+/* harmony import */ var vanilla_masker__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vanilla_masker__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var cpf_cnpj_validator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! cpf-cnpj-validator */ "./node_modules/cpf-cnpj-validator/dist/cpf-cnpj-validator.es.js");
+/* harmony import */ var email_validator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! email-validator */ "./node_modules/email-validator/index.js");
+/* harmony import */ var email_validator__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(email_validator__WEBPACK_IMPORTED_MODULE_4__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "Contract",
+  data: function data() {
+    return {
+      immobile: undefined,
+      uiConfig: {
+        legalPerson: false,
+        masksLoaded: false,
+        loading: true,
+        errors: []
+      },
+      errors: [],
+      contract: {
+        idImmobile: "",
+        city: "",
+        neighborhood: "",
+        address: "",
+        complement: "",
+        number: "",
+        person: "",
+        document: "",
+        email: "",
+        personType: "",
+        name: ""
+      }
+    };
+  },
+  methods: {
+    setDatasForContract: function setDatasForContract() {
+      var _this$immobile = this.immobile,
+          id = _this$immobile.id,
+          city = _this$immobile.city,
+          neighborhood = _this$immobile.neighborhood,
+          address = _this$immobile.address,
+          complement = _this$immobile.complement,
+          number = _this$immobile.number;
+      this.contract.idImmobile = id;
+      this.contract.city = city;
+      this.contract.neighborhood = neighborhood;
+      this.contract.address = address;
+      this.contract.complement = complement;
+      this.contract.number = number;
+    },
+    getImmobile: function getImmobile() {
+      var _this = this;
+
+      this.uiConfig.loading = true;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/immobile/".concat(this.$route.params.id)).then(function (_ref) {
+        var data = _ref.data;
+        var response = data.response;
+        _this.immobile = response;
+
+        _this.setDatasForContract();
+
+        _this.uiConfig.loading = false;
+      }, function (error) {
+        var data = error.response.data;
+        _this.uiConfig.loading = false;
+
+        switch (data.status) {
+          case 404:
+            _this.errors.push("Este produto não existe!");
+
+            break;
+
+          case 409:
+            _this.errors.push("Este produto já está sob um contrato!");
+
+            break;
+        }
+      });
+    },
+    loadFirstMask: function loadFirstMask() {
+      if (!this.uiConfig.masksLoaded) {
+        this.uiConfig.masksLoaded = true;
+        vanilla_masker__WEBPACK_IMPORTED_MODULE_2___default()(document.getElementById("cpf")).maskPattern("999.999.999-99");
+      }
+    },
+    changeMaskToDocumentInput: function changeMaskToDocumentInput() {
+      this.contract.document = "";
+
+      if (!this.uiConfig.masksLoaded) {
+        this.uiConfig.masksLoaded = true;
+      }
+
+      if (this.uiConfig.legalPerson) {
+        vanilla_masker__WEBPACK_IMPORTED_MODULE_2___default()(document.getElementById("cpf")).unMask();
+        vanilla_masker__WEBPACK_IMPORTED_MODULE_2___default()(document.getElementById("cpf")).maskPattern("99.999.999/9999-99");
+      } else {
+        vanilla_masker__WEBPACK_IMPORTED_MODULE_2___default()(document.getElementById("cpf")).unMask();
+        vanilla_masker__WEBPACK_IMPORTED_MODULE_2___default()(document.getElementById("cpf")).maskPattern("999.999.999-99");
+      }
+    },
+    initContractWithImmobile: function initContractWithImmobile() {
+      if (this.$route.params.id) {
+        this.getImmobile();
+      } else {
+        this.uiConfig.loading = false;
+      }
+    },
+    saveContract: function saveContract(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      this.uiConfig.errors = [];
+      var Form = new FormData();
+
+      if (this.uiConfig.legalPerson) {
+        if (cpf_cnpj_validator__WEBPACK_IMPORTED_MODULE_3__["cnpj"].isValid(cpf_cnpj_validator__WEBPACK_IMPORTED_MODULE_3__["cnpj"].format(this.contract.document))) {
+          this.contract.document = cpf_cnpj_validator__WEBPACK_IMPORTED_MODULE_3__["cnpj"].format(this.contract.document);
+          this.contract.personType = 1;
+        } else {
+          return this.uiConfig.errors.push("CNPJ Inválido!");
+        }
+      } else {
+        if (cpf_cnpj_validator__WEBPACK_IMPORTED_MODULE_3__["cpf"].isValid(cpf_cnpj_validator__WEBPACK_IMPORTED_MODULE_3__["cpf"].format(this.contract.document))) {
+          this.contract.document = cpf_cnpj_validator__WEBPACK_IMPORTED_MODULE_3__["cpf"].format(this.contract.document);
+          this.contract.personType = 2;
+        } else {
+          return this.uiConfig.errors.push("CPF Inválido!");
+        }
+      }
+
+      if (!email_validator__WEBPACK_IMPORTED_MODULE_4___default.a.validate(this.contract.email)) {
+        return this.uiConfig.errors.push("E-mail inválido!");
+      }
+
+      Form.append("name", this.contract.name);
+      Form.append("email", this.contract.email);
+      Form.append("personType", parseInt(this.contract.personType));
+      Form.append("idImmobile", parseInt(this.contract.idImmobile));
+      Form.append("document", this.contract.document);
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/api/contract", Form).then(function (_ref2) {
+        var data = _ref2.data;
+
+        _this2.$router.push("/imoveis");
+      }, function (error) {
+        var data = error.response.data;
+        _this2.uiConfig.loading = false;
+
+        switch (data.status) {
+          case "409":
+            _this2.uiConfig.errors.push("Este produto já está sob um contrato!");
+
+            break;
+        }
+      });
+    }
+  },
+  components: {
+    LoadingComponent: _components_loading_component__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  mounted: function mounted() {
+    this.initContractWithImmobile();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/cpf-cnpj-validator/dist/cpf-cnpj-validator.es.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/cpf-cnpj-validator/dist/cpf-cnpj-validator.es.js ***!
+  \***********************************************************************/
+/*! exports provided: default, cpf, cnpj, validator */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cpf", function() { return cpf; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cnpj", function() { return cnpj; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validator", function() { return validator; });
+/*!
+ * cpf-cnpj-validator v1.0.3
+ * (c) 2020-present Carvalho, Vinicius Luiz <carvalho.viniciusluiz@gmail.com>
+ * Released under the MIT License.
+ */
+const BLACKLIST = [
+    '00000000000',
+    '11111111111',
+    '22222222222',
+    '33333333333',
+    '44444444444',
+    '55555555555',
+    '66666666666',
+    '77777777777',
+    '88888888888',
+    '99999999999',
+    '12345678909'
+];
+const STRICT_STRIP_REGEX = /[.-]/g;
+const LOOSE_STRIP_REGEX = /[^\d]/g;
+const verifierDigit = (digits) => {
+    const numbers = digits
+        .split('')
+        .map(number => {
+        return parseInt(number, 10);
+    });
+    const modulus = numbers.length + 1;
+    const multiplied = numbers.map((number, index) => number * (modulus - index));
+    const mod = multiplied.reduce((buffer, number) => buffer + number) % 11;
+    return (mod < 2 ? 0 : 11 - mod);
+};
+const strip = (number, strict) => {
+    const regex = strict ? STRICT_STRIP_REGEX : LOOSE_STRIP_REGEX;
+    return (number || '').replace(regex, '');
+};
+const format = (number) => {
+    return strip(number).replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
+};
+const isValid = (number, strict) => {
+    const stripped = strip(number, strict);
+    if (!stripped) {
+        return false;
+    }
+    if (stripped.length !== 11) {
+        return false;
+    }
+    if (BLACKLIST.includes(stripped)) {
+        return false;
+    }
+    let numbers = stripped.substr(0, 9);
+    numbers += verifierDigit(numbers);
+    numbers += verifierDigit(numbers);
+    return numbers.substr(-2) === stripped.substr(-2);
+};
+const generate = (formatted) => {
+    let numbers = '';
+    for (let i = 0; i < 9; i += 1) {
+        numbers += Math.floor(Math.random() * 9);
+    }
+    numbers += verifierDigit(numbers);
+    numbers += verifierDigit(numbers);
+    return (formatted ? format(numbers) : numbers);
+};
+var cpf = {
+    verifierDigit,
+    strip,
+    format,
+    isValid,
+    generate,
+};
+
+const BLACKLIST$1 = [
+    '00000000000000',
+    '11111111111111',
+    '22222222222222',
+    '33333333333333',
+    '44444444444444',
+    '55555555555555',
+    '66666666666666',
+    '77777777777777',
+    '88888888888888',
+    '99999999999999'
+];
+const STRICT_STRIP_REGEX$1 = /[-\\/.]/g;
+const LOOSE_STRIP_REGEX$1 = /[^\d]/g;
+const verifierDigit$1 = (digits) => {
+    let index = 2;
+    const reverse = digits.split('').reduce((buffer, number) => {
+        return [parseInt(number, 10)].concat(buffer);
+    }, []);
+    const sum = reverse.reduce((buffer, number) => {
+        buffer += number * index;
+        index = (index === 9 ? 2 : index + 1);
+        return buffer;
+    }, 0);
+    const mod = sum % 11;
+    return (mod < 2 ? 0 : 11 - mod);
+};
+const strip$1 = (number, strict) => {
+    const regex = strict ? STRICT_STRIP_REGEX$1 : LOOSE_STRIP_REGEX$1;
+    return (number || '').replace(regex, '');
+};
+const format$1 = (number) => {
+    return strip$1(number).replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5');
+};
+const isValid$1 = (number, strict) => {
+    const stripped = strip$1(number, strict);
+    if (!stripped) {
+        return false;
+    }
+    if (stripped.length !== 14) {
+        return false;
+    }
+    if (BLACKLIST$1.includes(stripped)) {
+        return false;
+    }
+    let numbers = stripped.substr(0, 12);
+    numbers += verifierDigit$1(numbers);
+    numbers += verifierDigit$1(numbers);
+    return numbers.substr(-2) === stripped.substr(-2);
+};
+const generate$1 = (formatted) => {
+    let numbers = '';
+    for (let i = 0; i < 12; i += 1) {
+        numbers += Math.floor(Math.random() * 9);
+    }
+    numbers += verifierDigit$1(numbers);
+    numbers += verifierDigit$1(numbers);
+    return (formatted ? format$1(numbers) : numbers);
+};
+var cnpj = {
+    verifierDigit: verifierDigit$1,
+    strip: strip$1,
+    format: format$1,
+    isValid: isValid$1,
+    generate: generate$1
+};
+
+const validator = joi => ({
+    type: 'document',
+    base: joi.string(),
+    messages: {
+        'document.cpf': 'CPF inválido',
+        'document.cnpj': 'CNPJ inválido'
+    },
+    rules: {
+        cpf: {
+            validate(value, helpers, args, options) {
+                if (!cpf.isValid(value)) {
+                    return helpers.error('document.cpf');
+                }
+                return value;
+            }
+        },
+        cnpj: {
+            validate(value, helpers, args, options) {
+                if (!cnpj.isValid(value)) {
+                    return helpers.error('document.cnpj');
+                }
+                return value;
+            }
+        }
+    }
+});
+
+/* harmony default export */ __webpack_exports__["default"] = (validator);
+
+
 
 /***/ }),
 
@@ -37038,20 +37469,26 @@ var render = function() {
                         "div",
                         { staticClass: "w-4/12 text-right" },
                         [
-                          _c("router-link", { attrs: { to: "/contrato/2" } }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "btn.success text:p color:green px-6 py-2 rounded-lg font-light inline-block"
-                              },
-                              [
-                                _vm._v(
-                                  "\n                        CONTRATAR\n                    "
-                                )
-                              ]
-                            )
-                          ])
+                          _c(
+                            "router-link",
+                            {
+                              attrs: { to: "/contrato/registro/" + immobile.id }
+                            },
+                            [
+                              _c(
+                                "span",
+                                {
+                                  staticClass:
+                                    "btn.success text:p color:green px-6 py-2 rounded-lg font-light inline-block"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                        CONTRATAR\n                    "
+                                  )
+                                ]
+                              )
+                            ]
+                          )
                         ],
                         1
                       )
@@ -37255,9 +37692,20 @@ var render = function() {
                 : _vm._e(),
               _vm._v(" "),
               product.solded
-                ? _c("p", { staticClass: "text:p color:green" }, [
-                    _vm._v("\n                    Contratado\n                ")
-                  ])
+                ? _c(
+                    "a",
+                    {
+                      staticClass: "text:p color:green",
+                      attrs: {
+                        href: "/api/contract/" + product.contract.id,
+                        target: "_blank"
+                      }
+                    },
+                    [
+                      _vm._v("\n                    Contratado "),
+                      _c("i", { staticClass: "fa fa-link" })
+                    ]
+                  )
                 : _vm._e()
             ]),
             _vm._v(" "),
@@ -37316,47 +37764,10 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", { staticClass: "w-full px-4 py-6" }, [
-    _c("form", { staticClass: "w-full" }, [
+    _c("section", { staticClass: "w-full" }, [
       _vm._m(0),
       _vm._v(" "),
-      !_vm.$route.params.id
-        ? _c("section", { staticClass: "w-full" }, [_c("ProductsComponent")], 1)
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.$route.params.id
-        ? _c("section", { staticClass: "w-full" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _vm._m(2),
-            _vm._v(" "),
-            _c("input", {
-              staticClass:
-                "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
-              attrs: {
-                placeholder: "Complemento",
-                type: "text",
-                disabled: "",
-                value: "Próximo ao Supermercado"
-              }
-            }),
-            _vm._v(" "),
-            _vm._m(3),
-            _vm._v(" "),
-            _c("input", {
-              staticClass:
-                "input w-full mx-auto my-2 px-4 py-2 text:p block rounded-lg",
-              attrs: { placeholder: "E-mail", type: "text" }
-            }),
-            _vm._v(" "),
-            _c("input", {
-              staticClass:
-                "input w-full mx-auto my-2 px-4 py-2 text:p block rounded-lg",
-              attrs: { placeholder: "Nome Completo", type: "text" }
-            }),
-            _vm._v(" "),
-            _vm._m(4)
-          ])
-        : _vm._e()
+      _c("section", { staticClass: "w-full" }, [_c("ProductsComponent")], 1)
     ])
   ])
 }
@@ -37369,152 +37780,6 @@ var staticRenderFns = [
       _c("h4", { staticClass: "text.title:h2 font-bold color:purple" }, [
         _vm._v("\n                NOVO CONTRATO\n            ")
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "section",
-      { staticClass: "w-full mx-auto flex flex-wrap my-2" },
-      [
-        _c("div", { staticClass: "w-6/12 pr-1" }, [
-          _c("input", {
-            staticClass:
-              "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
-            attrs: {
-              placeholder: "Cidade",
-              type: "text",
-              value: "Guarulhos",
-              disabled: ""
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "w-6/12 pl-1" }, [
-          _c("input", {
-            staticClass:
-              "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
-            attrs: {
-              placeholder: "Bairro",
-              type: "text",
-              disabled: "",
-              value: "JD. Vermelhão"
-            }
-          })
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "section",
-      { staticClass: "w-full mx-auto flex flex-wrap my-2" },
-      [
-        _c("div", { staticClass: "w-8/12 pr-1" }, [
-          _c("input", {
-            staticClass:
-              "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
-            attrs: {
-              placeholder: "Endereço",
-              type: "text",
-              disabled: "",
-              value: "R. Pernambuco"
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "w-4/12 pl-1" }, [
-          _c("input", {
-            staticClass:
-              "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
-            attrs: {
-              placeholder: "Número",
-              type: "text",
-              disabled: "",
-              value: "1238"
-            }
-          })
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "section",
-      { staticClass: "w-full mx-auto flex flex-wrap my-2 items-center" },
-      [
-        _c("div", { staticClass: "w-6/12 pr-1" }, [
-          _c("input", {
-            staticClass: "input:checkbox hidden",
-            attrs: { id: "persontype", type: "checkbox" }
-          }),
-          _vm._v(" "),
-          _c(
-            "label",
-            {
-              staticClass:
-                "input:checkbox.label flex flex-wrap px-4 py-2 rounded-lg",
-              attrs: { for: "persontype" }
-            },
-            [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "input:checkbox.canvas mx-1 relative rounded-full"
-                },
-                [
-                  _c("div", {
-                    staticClass:
-                      "input:checkbox.icons absolute my-auto bottom-0 top-0 rounded-full"
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "span",
-                { staticClass: "input:checkbox.title text:p color:lead" },
-                [
-                  _vm._v(
-                    "\n                            Pessoa Juridica\n                        "
-                  )
-                ]
-              )
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "w-6/12 pl-1" }, [
-          _c("input", {
-            staticClass:
-              "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
-            attrs: { placeholder: "CPF", type: "text" }
-          })
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: "w-full mx-auto" }, [
-      _c(
-        "button",
-        {
-          staticClass:
-            "btn.success text:p my-2 color:green px-6 py-2 rounded-lg font-light"
-        },
-        [_vm._v("\n                    CADASTRAR CONTRATO\n                ")]
-      )
     ])
   }
 ]
@@ -37675,6 +37940,7 @@ var render = function() {
                   ],
                   staticClass:
                     "input w-full mx-auto px-4 py-2 text:p block rounded-lg bg-white",
+                  attrs: { disabled: _vm.immobile.CEP != "" },
                   on: {
                     change: function($event) {
                       var $$selectedVal = Array.prototype.filter
@@ -37738,7 +38004,12 @@ var render = function() {
                 ],
                 staticClass:
                   "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
-                attrs: { placeholder: "Endereço", required: "", type: "text" },
+                attrs: {
+                  placeholder: "Endereço",
+                  disabled: _vm.immobile.CEP != "",
+                  required: "",
+                  type: "text"
+                },
                 domProps: { value: _vm.immobile.address },
                 on: {
                   input: function($event) {
@@ -37790,7 +38061,12 @@ var render = function() {
                 ],
                 staticClass:
                   "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
-                attrs: { placeholder: "Cidade", required: "", type: "text" },
+                attrs: {
+                  placeholder: "Cidade",
+                  disabled: _vm.immobile.CEP != "",
+                  required: "",
+                  type: "text"
+                },
                 domProps: { value: _vm.immobile.city },
                 on: {
                   input: function($event) {
@@ -37815,7 +38091,12 @@ var render = function() {
                 ],
                 staticClass:
                   "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
-                attrs: { placeholder: "Bairro", required: "", type: "text" },
+                attrs: {
+                  placeholder: "Bairro",
+                  disabled: _vm.immobile.CEP != "",
+                  required: "",
+                  type: "text"
+                },
                 domProps: { value: _vm.immobile.neighborhood },
                 on: {
                   input: function($event) {
@@ -37858,11 +38139,15 @@ var render = function() {
             ? _c(
                 "section",
                 { staticClass: "w-full my-2 bg-red py-2 px-4 rounded-lg" },
-                _vm._l(_vm.errors, function(error) {
-                  return _c("p", { staticClass: "text:p font-bold" }, [
-                    _c("i", { staticClass: "fa fa-warning" }),
-                    _vm._v(" - " + _vm._s(error) + "\n                    ")
-                  ])
+                _vm._l(_vm.errors, function(error, index) {
+                  return _c(
+                    "p",
+                    { key: "error-" + index, staticClass: "text:p font-bold" },
+                    [
+                      _c("i", { staticClass: "fa fa-warning" }),
+                      _vm._v(" - " + _vm._s(error) + "\n                    ")
+                    ]
+                  )
                 }),
                 0
               )
@@ -37901,6 +38186,458 @@ var staticRenderFns = [
       _c("h4", { staticClass: "text.title:h2 font-bold color:purple" }, [
         _vm._v("\n                    CADASTRAR NOVO IMÓVEL\n                ")
       ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/src/pages/register_contract.component.vue?vue&type=template&id=9b151e02&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/src/pages/register_contract.component.vue?vue&type=template&id=9b151e02& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("section", { staticClass: "w-full px-4 py-6" }, [
+    _vm.uiConfig.loading
+      ? _c(
+          "section",
+          { staticClass: "w-6/12 mx-auto" },
+          [_c("LoadingComponent")],
+          1
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.errors.length
+      ? _c(
+          "section",
+          { staticClass: "w-full px-4 py-2 rounded-lg bg-red" },
+          _vm._l(_vm.errors, function(error, index) {
+            return _c(
+              "p",
+              {
+                key: "error-" + index,
+                staticClass: "text:p font-bold color-lead"
+              },
+              [
+                _c("i", { staticClass: "fa fa-warning" }),
+                _vm._v(" " + _vm._s(error) + "\n        ")
+              ]
+            )
+          }),
+          0
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    !_vm.errors.length && !_vm.uiConfig.loading
+      ? _c(
+          "form",
+          { staticClass: "w-full", on: { submit: _vm.saveContract } },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("section", { staticClass: "w-full" }, [
+              _c(
+                "section",
+                { staticClass: "w-full mx-auto flex flex-wrap my-2" },
+                [
+                  _c("div", { staticClass: "w-6/12 pr-1" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.contract.city,
+                          expression: "contract.city"
+                        }
+                      ],
+                      staticClass:
+                        "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
+                      attrs: {
+                        placeholder: "Cidade",
+                        type: "text",
+                        disabled: ""
+                      },
+                      domProps: { value: _vm.contract.city },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.contract, "city", $event.target.value)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "w-6/12 pl-1" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.contract.neighborhood,
+                          expression: "contract.neighborhood"
+                        }
+                      ],
+                      staticClass:
+                        "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
+                      attrs: {
+                        placeholder: "Bairro",
+                        type: "text",
+                        disabled: "",
+                        value: "JD. Vermelhão"
+                      },
+                      domProps: { value: _vm.contract.neighborhood },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.contract,
+                            "neighborhood",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "section",
+                { staticClass: "w-full mx-auto flex flex-wrap my-2" },
+                [
+                  _c("div", { staticClass: "w-8/12 pr-1" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.contract.address,
+                          expression: "contract.address"
+                        }
+                      ],
+                      staticClass:
+                        "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
+                      attrs: {
+                        placeholder: "Endereço",
+                        type: "text",
+                        disabled: "",
+                        value: "R. Pernambuco"
+                      },
+                      domProps: { value: _vm.contract.address },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.contract, "address", $event.target.value)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "w-4/12 pl-1" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.contract.number,
+                          expression: "contract.number"
+                        }
+                      ],
+                      staticClass:
+                        "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
+                      attrs: {
+                        placeholder: "Número",
+                        type: "text",
+                        disabled: ""
+                      },
+                      domProps: { value: _vm.contract.number },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.contract, "number", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.contract.complement,
+                    expression: "contract.complement"
+                  }
+                ],
+                staticClass:
+                  "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
+                attrs: {
+                  placeholder: "Complemento",
+                  type: "text",
+                  disabled: ""
+                },
+                domProps: { value: _vm.contract.complement },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.contract, "complement", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "section",
+                {
+                  staticClass: "w-full mx-auto flex flex-wrap my-2 items-center"
+                },
+                [
+                  _c("div", { staticClass: "w-6/12 pr-1" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.uiConfig.legalPerson,
+                          expression: "uiConfig.legalPerson"
+                        }
+                      ],
+                      staticClass: "input:checkbox hidden",
+                      attrs: { id: "persontype", type: "checkbox" },
+                      domProps: {
+                        checked: Array.isArray(_vm.uiConfig.legalPerson)
+                          ? _vm._i(_vm.uiConfig.legalPerson, null) > -1
+                          : _vm.uiConfig.legalPerson
+                      },
+                      on: {
+                        change: [
+                          function($event) {
+                            var $$a = _vm.uiConfig.legalPerson,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(
+                                    _vm.uiConfig,
+                                    "legalPerson",
+                                    $$a.concat([$$v])
+                                  )
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.uiConfig,
+                                    "legalPerson",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.uiConfig, "legalPerson", $$c)
+                            }
+                          },
+                          _vm.changeMaskToDocumentInput
+                        ]
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(1)
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "w-6/12 pl-1" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.contract.document,
+                          expression: "contract.document"
+                        }
+                      ],
+                      staticClass:
+                        "input w-full mx-auto px-4 py-2 text:p block rounded-lg",
+                      attrs: {
+                        placeholder: _vm.uiConfig.legalPerson ? "CNPJ" : "CPF",
+                        type: "text",
+                        id: "cpf",
+                        required: ""
+                      },
+                      domProps: { value: _vm.contract.document },
+                      on: {
+                        keydown: _vm.loadFirstMask,
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.contract,
+                            "document",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.contract.email,
+                    expression: "contract.email"
+                  }
+                ],
+                staticClass:
+                  "input w-full mx-auto my-2 px-4 py-2 text:p block rounded-lg",
+                attrs: { placeholder: "E-mail", required: "", type: "text" },
+                domProps: { value: _vm.contract.email },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.contract, "email", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.contract.name,
+                    expression: "contract.name"
+                  }
+                ],
+                staticClass:
+                  "input w-full mx-auto my-2 px-4 py-2 text:p block rounded-lg",
+                attrs: {
+                  placeholder: "Nome Completo",
+                  type: "text",
+                  required: ""
+                },
+                domProps: { value: _vm.contract.name },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.contract, "name", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm.uiConfig.errors.length
+                ? _c(
+                    "section",
+                    { staticClass: "w-full px-4 py-2 rounded-lg bg-red" },
+                    _vm._l(_vm.uiConfig.errors, function(error, index) {
+                      return _c(
+                        "p",
+                        {
+                          key: "error-" + index,
+                          staticClass: "text:p font-bold color-lead"
+                        },
+                        [
+                          _c("i", { staticClass: "fa fa-warning" }),
+                          _vm._v(" " + _vm._s(error) + "\n                ")
+                        ]
+                      )
+                    }),
+                    0
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm._m(2)
+            ])
+          ]
+        )
+      : _vm._e()
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("header", { staticClass: "w-full mx-auto my-6" }, [
+      _c("h4", { staticClass: "text.title:h2 font-bold color:purple" }, [
+        _vm._v("\n                NOVO CONTRATO\n            ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "input:checkbox.label flex flex-wrap px-4 py-2 rounded-lg",
+        attrs: { for: "persontype" }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "input:checkbox.canvas mx-1 relative rounded-full" },
+          [
+            _c("div", {
+              staticClass:
+                "input:checkbox.icons absolute my-auto bottom-0 top-0 rounded-full"
+            })
+          ]
+        ),
+        _vm._v(" "),
+        _c("span", { staticClass: "input:checkbox.title text:p color:lead" }, [
+          _vm._v(
+            "\n                            Pessoa Juridica\n                        "
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("footer", { staticClass: "w-full mx-auto" }, [
+      _c(
+        "button",
+        {
+          staticClass:
+            "btn.success text:p my-2 color:green px-6 py-2 rounded-lg font-light"
+        },
+        [_vm._v("\n                    CADASTRAR CONTRATO\n                ")]
+      )
     ])
   }
 ]
@@ -53246,7 +53983,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_pages_register_component_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../src/pages/register.component.vue */ "./resources/src/pages/register.component.vue");
 /* harmony import */ var _src_pages_list_component_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../src/pages/list.component.vue */ "./resources/src/pages/list.component.vue");
 /* harmony import */ var _src_pages_contract_component_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../src/pages/contract.component.vue */ "./resources/src/pages/contract.component.vue");
+/* harmony import */ var _src_pages_register_contract_component_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../src/pages/register_contract.component.vue */ "./resources/src/pages/register_contract.component.vue");
 // Pages
+
 
 
 
@@ -53261,8 +54000,8 @@ __webpack_require__.r(__webpack_exports__);
   path: "/contrato",
   component: _src_pages_contract_component_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
 }, {
-  path: "/contrato/:id",
-  component: _src_pages_contract_component_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  path: "/contrato/registro/:id",
+  component: _src_pages_register_contract_component_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
 }]);
 
 /***/ }),
@@ -53509,15 +54248,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************!*\
   !*** ./resources/src/components/products.component.vue ***!
   \*********************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _products_component_vue_vue_type_template_id_8f2dfece___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./products.component.vue?vue&type=template&id=8f2dfece& */ "./resources/src/components/products.component.vue?vue&type=template&id=8f2dfece&");
 /* harmony import */ var _products_component_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./products.component.vue?vue&type=script&lang=js& */ "./resources/src/components/products.component.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _products_component_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _products_component_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _products_component_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./products.component.vue?vue&type=style&index=0&lang=css& */ "./resources/src/components/products.component.vue?vue&type=style&index=0&lang=css&");
+/* empty/unused harmony star reexport *//* harmony import */ var _products_component_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./products.component.vue?vue&type=style&index=0&lang=css& */ "./resources/src/components/products.component.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -53549,7 +54287,7 @@ component.options.__file = "resources/src/components/products.component.vue"
 /*!**********************************************************************************!*\
   !*** ./resources/src/components/products.component.vue?vue&type=script&lang=js& ***!
   \**********************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -53882,6 +54620,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_register_component_vue_vue_type_template_id_6b059720___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_register_component_vue_vue_type_template_id_6b059720___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/src/pages/register_contract.component.vue":
+/*!*************************************************************!*\
+  !*** ./resources/src/pages/register_contract.component.vue ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _register_contract_component_vue_vue_type_template_id_9b151e02___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register_contract.component.vue?vue&type=template&id=9b151e02& */ "./resources/src/pages/register_contract.component.vue?vue&type=template&id=9b151e02&");
+/* harmony import */ var _register_contract_component_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./register_contract.component.vue?vue&type=script&lang=js& */ "./resources/src/pages/register_contract.component.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _register_contract_component_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _register_contract_component_vue_vue_type_template_id_9b151e02___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _register_contract_component_vue_vue_type_template_id_9b151e02___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/src/pages/register_contract.component.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/src/pages/register_contract.component.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************!*\
+  !*** ./resources/src/pages/register_contract.component.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_register_contract_component_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./register_contract.component.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/src/pages/register_contract.component.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_register_contract_component_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/src/pages/register_contract.component.vue?vue&type=template&id=9b151e02&":
+/*!********************************************************************************************!*\
+  !*** ./resources/src/pages/register_contract.component.vue?vue&type=template&id=9b151e02& ***!
+  \********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_register_contract_component_vue_vue_type_template_id_9b151e02___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./register_contract.component.vue?vue&type=template&id=9b151e02& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/src/pages/register_contract.component.vue?vue&type=template&id=9b151e02&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_register_contract_component_vue_vue_type_template_id_9b151e02___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_register_contract_component_vue_vue_type_template_id_9b151e02___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

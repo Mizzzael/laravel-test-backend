@@ -87,7 +87,7 @@
                     </p>
                 </div>
                 <div v-if="!immobile.solded" class="w-4/12 text-right">
-                    <router-link to="/contrato/2">
+                    <router-link :to="'/contrato/registro/' + immobile.id">
                         <span
                             class="btn.success text:p color:green px-6 py-2 rounded-lg font-light inline-block"
                         >

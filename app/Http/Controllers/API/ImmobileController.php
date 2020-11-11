@@ -16,15 +16,51 @@ class ImmobileController extends Controller
     public function index()
     {
         $immobile = \App\Immobile::where('active', true)->get();
+        foreach($immobile as $key => $value)
+        {
+            $value->contract;
+        }
         return \App\Helpers\Responses::success($immobile->toArray());
     }
+    
 
-    public function getImmobile(Request $request) 
+    /**
+     * Get a immobile by id if the contract don't exists.
+     * 
+     * @param int $id
+     * @return Immobile
+     */
+    public function getImmobileToContract($id) 
     {
 
+        $immobile = \App\Immobile::find($id);
+        
+        if (!$immobile || $immobile->active == false) {
+            return \App\Helpers\Responses::notFound([
+                'message' => 'Immobile don\'t exists.'
+            ]);
+        }
+        
+        if ($immobile->solded == true) {
+            return \App\Helpers\Responses::conflict([
+                'message' => '
+                This property is already in current contract.'
+            ]);
+        }
+
+        return \App\Helpers\Responses::success($immobile);
+        
     }
 
-
+    /**
+     * Check if the new immobile don't exist in base.
+     * 
+     * @param $state string
+     * @param $city string
+     * @param $neighborhood string
+     * @param $address string
+     * @param $number numeric
+     */
     private function checkIfImmobileExists($state, $city, $neighborhood, $address, $number) 
     {
 
@@ -76,12 +112,23 @@ class ImmobileController extends Controller
         
     }
 
+    /**
+     * Get emails saved in table immobiles.
+     * 
+     * @return Array $emails
+     */
     public function getAllEmailsFromImmobiles() 
     {
         $emails = \App\Immobile::select('email')->where(['active' => true])->distinct()->get();
         return \App\Helpers\Responses::success($emails->toArray());
     }
 
+    /**
+     * Get all states saved in table immobiles using email
+     * 
+     * @param Request $email
+     * @return Array $states
+     */
     public function getAllStatesFromImmobilesByEmail(Request $request) 
     {
 
@@ -97,6 +144,13 @@ class ImmobileController extends Controller
         return \App\Helpers\Responses::success($states->toArray());
     }
 
+    /**
+     * Get all neighborhood saved in table immobiles using email and state
+     * 
+     * @param Request $email
+     * @param Request $state
+     * @return Array $neighborhoods
+     */
     public function getAllNeighborhoodFromImmobilesByEmailAndState(Request $request) 
     {
 
@@ -113,6 +167,14 @@ class ImmobileController extends Controller
         return \App\Helpers\Responses::success($neighborhood->toArray());
     }
 
+    /**
+     * Get all Immobiles saved in table using email, states and neighborhood
+     * 
+     * @param Request $email
+     * @param Request $state
+     * @param Request $neighborhood
+     * @return Array Immobiles
+     */
     public function getAllImmoblilesByEmailAndStateAndNeighborhood(Request $request) 
     {
 

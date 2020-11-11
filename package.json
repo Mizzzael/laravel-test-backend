@@ -20,11 +20,11 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "cpf-cnpj-validator": "^1.0.3",
         "email-validator": "^2.0.4",
         "font-awesome": "^4.7.0",
         "lottie-web": "^5.7.4",
         "tailwindcss": "^1.9.6",
-        "validador-de-cpf": "^1.0.2",
         "vanilla-masker": "^1.2.0",
         "vue": "^2.6.12",
         "vue-router": "^3.4.9"

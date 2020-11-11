@@ -69,9 +69,14 @@
                     <p v-if="!product.solded" class="text:p color:purple">
                         Não contratado
                     </p>
-                    <p v-if="product.solded" class="text:p color:green">
-                        Contratado
-                    </p>
+                    <a
+                        :href="'/api/contract/' + product.contract.id"
+                        target="_blank"
+                        v-if="product.solded"
+                        class="text:p color:green"
+                    >
+                        Contratado <i class="fa fa-link"></i>
+                    </a>
                 </div>
                 <div class="w-2/12 px-1 text-center">
                     <button

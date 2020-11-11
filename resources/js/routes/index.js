@@ -2,6 +2,7 @@
 import RegisterComponent from "../../src/pages/register.component.vue";
 import ListComponent from "../../src/pages/list.component.vue";
 import ContractComponent from "../../src/pages/contract.component.vue";
+import RegisterContractComponent from "../../src/pages/register_contract.component.vue";
 
 export default [
     {
@@ -18,7 +19,7 @@ export default [
         component: ContractComponent
     },
     {
-        path: "/contrato/:id",
-        component: ContractComponent
+        path: "/contrato/registro/:id",
+        component: RegisterContractComponent
     }
 ];

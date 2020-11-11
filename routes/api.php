@@ -18,10 +18,12 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::prefix('immobile')->group(function() {
+Route::prefix('immobile')->group(function() 
+{
 
     Route::get('/', 'API\ImmobileController@index');
     Route::get('/emails', 'API\ImmobileController@getAllEmailsFromImmobiles');
+    Route::get('/{id}', 'API\ImmobileController@getImmobileToContract');
     
     Route::post('/', 'API\ImmobileController@store');
     Route::post('/states', 'API\ImmobileController@getAllStatesFromImmobilesByEmail');
@@ -29,4 +31,12 @@ Route::prefix('immobile')->group(function() {
     Route::post('/filter', 'API\ImmobileController@getAllImmoblilesByEmailAndStateAndNeighborhood');
 
     Route::delete('/{id}', 'API\ImmobileController@disabled');
+});
+
+Route::prefix('contract')->group(function() 
+{
+
+    Route::get('/{id}', 'API\ContractController@show');
+    Route::post('/', 'API\ContractController@store');
+
 });
